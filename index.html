@@ -2,11 +2,54 @@
 <html>
 
 <head>
-<h1>Index PageM</h1>
+  <title>Hello World</title>
+  <h1>Calendar</h1>
+  <link href='css/fullcalendar.css' rel='stylesheet' />
+  <script src='lib/moment.min.js'></script>
+  <script src='lib/jquery.min.js'></script>
+  <script src='js/fullcalendar.js'></script>
+  <script>
+
+	$(document).ready(function() {
+
+		$('#calendar').fullCalendar({
+
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,listYear'
+			},
+
+			displayEventTime: false, // don't show the time column in list view
+
+			// THIS KEY WON'T WORK IN PRODUCTION!!!
+			// To make your own Google API key, follow the directions here:
+			// http://fullcalendar.io/docs/google_calendar/
+			googleCalendarApiKey: 'AIzaSyCYdmBoCOgcPTLMG7UCsbCSIE_uruL4yW0',
+
+			// US Holidays
+			events: 'ommiecalendar@gmail.com',
+
+			eventClick: function(event) {
+				// opens events in a popup window
+				window.open(event.url, 'gcalevent', 'width=700,height=600');
+				return false;
+			},
+
+			loading: function(bool) {
+				$('#loading').toggle(bool);
+			}
+
+		});
+
+	});
+
+</script>
 </head>
 <body>
 
-<iframe src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<p>Esther</p>
+
 
 </body>
 
