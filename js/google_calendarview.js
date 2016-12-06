@@ -14,7 +14,6 @@ $(document).ready(function() {
     // To make your own Google API key, follow the directions here:
     // http://fullcalendar.io/docs/google_calendar/
     googleCalendarApiKey: 'AIzaSyCYdmBoCOgcPTLMG7UCsbCSIE_uruL4yW0',
-    //googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
     // US Holidays
     eventSources:[
     {

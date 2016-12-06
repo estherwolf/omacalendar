@@ -3,6 +3,7 @@
 
 <head>
   <title>Oma's Calendar</title>
+  <meta http-equiv="refresh" content="60">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link href='css/fullcalendar.css' rel='stylesheet' />
   <link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
@@ -29,22 +30,8 @@
 <img src="" id="monthImage" class="object-fit_contain">
 
 
-<script>
-var w;
+<script src='js/picture_changer.js'></script>
 
-    if(typeof(Worker) !== "undefined") {
-        if(typeof(w) == "undefined") {
-            w = new Worker("js/picture_changer.js");
-
-        }
-        w.onmessage = function(event) {
-            document.getElementById("result").innerHTML = event.data;
-        };
-    } else {
-        document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
-    }
-
-</script>
 </div>
 
   <div id='loading'>loading...</div>
