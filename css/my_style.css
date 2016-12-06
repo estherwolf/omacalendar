@@ -23,6 +23,31 @@
   border:2px dashed #ccc;
   min-height: 100px;
 }
+.calendar_image img {
+	width: 150px; height: 150px;
+	border: 1px solid;
+	object-fit: cover;
+}
+.image {
+  float: left;
+  width: 100%;
+  margin: 0 30px 20px 0;
+
+  &:nth-child(2n) {
+    clear: left;
+  }
+
+  &:nth-child(2n+1){
+    margin-right: 0;
+  }
+}
+img { height: 70vw; background-color: #eee;}
+
+img[class] {
+  width: 100%;
+}
+
+.object-fit_contain { object-fit: contain }
 
 @media screen and (max-width: 900px) {
    #calendar {
