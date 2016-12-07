@@ -4,7 +4,7 @@ var duration = 0;
 d = new Date();
 month_id = d.getMonth();
 
-var _url = 'http://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'.json';
+var _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'.json';
 
 $.ajax({
         url: _url,
