@@ -1,8 +1,13 @@
 var pics = [];
 var duration = 0;
 
+d = new Date();
+month_id = d.getMonth();
+
+var _url = 'http://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'.json';
+
 $.ajax({
-        url: 'http://res.cloudinary.com/dse2nhyx3/image/list/hello.json',
+        url: _url,
         async:false,
         success: function(data){
           var _data = data;
@@ -13,10 +18,11 @@ $.ajax({
       });
 
 
+
 setInterval(function(){
 $(document).ready(function(){
       $.ajax({
-        url: 'http://res.cloudinary.com/dse2nhyx3/image/list/hello.json',
+        url: _url,
         success: function(data){
           var _data = data;
           var d = new Date();

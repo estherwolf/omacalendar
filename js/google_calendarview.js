@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
   $('#calendar').fullCalendar({
-
+    theme: false,
     header: {
-      left: '',
-      center: 'title',
-      right: ''
+      left: 'prev, next',
+      center: '',
+      right: 'title'
     },
 
     displayEventTime: false, // don't show the time column in list view
@@ -17,10 +17,12 @@ $(document).ready(function() {
     // US Holidays
     eventSources:[
     {
-      googleCalendarId: 'ommiecalendar@gmail.com'
+      googleCalendarId: 'ommiecalendar@gmail.com',
+      color: '#ff9999'
     },
     {
       googleCalendarId: 'en.usa#holiday@group.v.calendar.google.com',
+      color: '#99b3ff'
     }],
     //events: 'en.usa#holiday@group.v.calendar.google.com',
 
