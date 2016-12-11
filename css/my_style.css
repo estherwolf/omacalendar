@@ -22,11 +22,7 @@
   overflow: hidden;
   margin:10px;
   border:2px solid #ccc;
-  min-height: 100px;
-}
-
-#weather {
-  height: 1vw;
+  height: 28vw;
 }
 
 
@@ -48,7 +44,7 @@
     margin-right: 0;
   }
 }
-img { height: 80vw; background-color: #eee;}
+img { height: 70vw; background-color: #eee;}
 
 img[class] {
   width: 100%;

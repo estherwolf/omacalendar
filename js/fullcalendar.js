@@ -13221,7 +13221,7 @@ var ListView = View.extend({
 	},
 
 	setHeight: function(totalHeight, isAuto) {
-		this.scroller.setHeight(this.computeScrollerHeight(myHeight)); //HIPPO: this is where the length of the list is set!
+		this.scroller.setHeight(this.computeScrollerHeight(totalHeight)); //HIPPO: this is where the length of the list is set!
 	},
 
 	computeScrollerHeight: function(totalHeight) {

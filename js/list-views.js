@@ -8,7 +8,7 @@ $(document).ready(function() {
       right: ''
     },
 
-
+    height: parent,
     displayEventTime: true, // don't show the time column in list view
 
     // THIS KEY WON'T WORK IN PRODUCTION!!!
@@ -25,7 +25,17 @@ $(document).ready(function() {
       googleCalendarId: 'en.usa#holiday@group.v.calendar.google.com',
     }],
     //events: 'en.usa#holiday@group.v.calendar.google.com',
-		defaultView: 'listWeek',
+		//defaultView: 'listWeek',
+
+    views: {threeDayView:{
+      type:'list',
+      duration:{days: 3},
+    }
+
+  },
+
+    defaultView: 'threeDayView',
+
 
     eventClick: function(event) {
       // opens events in a popup window
