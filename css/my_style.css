@@ -11,9 +11,10 @@
   font-family: "Ariel", Ariel, sans-serif;
   background-color: white;
   float:left;
-  width: 100%;
-  margin-right:20px;
+  width: 97.5%;
+  margin-right:2.5%;
   margin-left: 1%;
+
 }
 #eventList {
   font-family: "Ariel", Ariel, sans-serif;
@@ -23,6 +24,12 @@
   border:2px solid #ccc;
   min-height: 100px;
 }
+
+#weather {
+  height: 1vw;
+}
+
+
 .calendar_image img {
 	width: 150px; height: 150px;
 	border: 1px solid;
@@ -41,7 +48,7 @@
     margin-right: 0;
   }
 }
-img { height: 70vw; background-color: #eee;}
+img { height: 80vw; background-color: #eee;}
 
 img[class] {
   width: 100%;
