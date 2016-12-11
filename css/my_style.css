@@ -11,7 +11,7 @@
   font-family: "Ariel", Ariel, sans-serif;
   background-color: white;
   float:left;
-  width: 60%;
+  width: 100%;
   margin-right:20px;
   margin-left: 1%;
 }
@@ -41,7 +41,7 @@
     margin-right: 0;
   }
 }
-img { height: 120vw; background-color: #eee;}
+img { height: 70vw; background-color: #eee;}
 
 img[class] {
   width: 100%;

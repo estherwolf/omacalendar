@@ -12338,7 +12338,7 @@ var BasicView = FC.BasicView = View.extend({
 		// distribute the height to the rows
 		// (totalHeight is a "recommended" value if isAuto)
 		scrollerHeight = this.computeScrollerHeight(totalHeight); //HIPPO: hey, I changed this from totalHeight
-		myHeight = totalHeight;
+		myHeight = 0.5*totalHeight;
 		this.setGridHeight(scrollerHeight, isAuto);
 
 		// is the event limit dynamically calculated?
