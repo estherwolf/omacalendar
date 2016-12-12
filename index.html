@@ -27,19 +27,19 @@
 
 </head>
 <body>
+
+<button class="buttons" id="prev_image">Prev</button>
+<button class="buttons" id="next_image">Next</button>
+
 <script type='text/javascript'>
 var OSName = "";
 if (navigator.appVersion.indexOf("Linux")!=-1){ OSName="Linux";}
 if (navigator.appVersion.indexOf("X11")!=-1){OSName="UNIX"};
-document.write(navigator.appVersion.indexOf("Linux"), navigator.appVersion.indexOf("X11"), navigator.appVersion)
 if(OSName == "Linux" || OSName == "UNIX"){
   document.getElementById('prev_image').style.visibility = "hidden";
   document.getElementById('next_image').style.visibility = "hidden";
 }
 </script>
-
-<button class="buttons" id="prev_image">Prev</button>
-<button class="buttons" id="next_image">Next</button>
 
 <div class="image">
 <img src="" id="monthImage" class="object-fit_contain">
