@@ -10,7 +10,7 @@
 #calendar {
   font-family: "Ariel", Ariel, sans-serif;
   background-color: white;
-  float:left;
+  float: none;
   width: 97.5%;
   margin-right:2.5%;
   margin-left: 1%;
