@@ -31,6 +31,7 @@
 var OSName = "";
 if (navigator.appVersion.indexOf("Linux")!=-1){ OSName="Linux";}
 if (navigator.appVersion.indexOf("X11")!=-1){OSName="UNIX"};
+document.write(navigator.appVersion.indexOf("Linux"), navigator.appVersion.indexOf("X11"), navigator.appVersion)
 if(OSName == "Linux" || OSName == "UNIX"){
   document.getElementById('prev_image').style.visibility = "hidden";
   document.getElementById('next_image').style.visibility = "hidden";
