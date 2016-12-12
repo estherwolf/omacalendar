@@ -5,28 +5,28 @@ d = new Date();
 month_id = d.getMonth();
 
 var _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'.json';
+var ind = 0;
+var init_data;
 
 $.ajax({
         url: _url,
         async:false,
         success: function(data){
-          var _data = data;
+          init_data = data;
           var d = new Date();
-          set_pic(_data.resources[0].public_id);
-          duration = ((_data.resources.length)*30000)+1000;
+          set_pic(init_data.resources[0].public_id);
+          duration = ((init_data.resources.length)*30000)+1000;
         }
       });
 
-
-
-setInterval(function(){
+var interval_id = setInterval(function(){
 $(document).ready(function(){
       $.ajax({
         url: _url,
         success: function(data){
           var _data = data;
           var d = new Date();
-          var ind = d.getSeconds() % _data.resources.length;
+          ind = d.getSeconds() % _data.resources.length;
           set_pic(_data.resources[ind].public_id);}
 
         })
@@ -37,3 +37,22 @@ function set_pic(name){
   var d = new Date();
   var _url = "https://res.cloudinary.com/dse2nhyx3/image/upload/"+name;
     document.getElementById("monthImage").src = _url;}
+
+document.getElementById("prev_image").onclick = function() {prev_picture(ind)};
+document.getElementById("next_image").onclick = function() {next_picture(ind)};
+
+function prev_picture(indx){
+      clearInterval(interval_id);
+      if(indx-1 < 0){
+        indx = init_data.resources.length
+      }
+      set_pic(init_data.resources[(indx-1) % init_data.resources.length].public_id);
+      ind = indx-1;
+}
+
+function next_picture(indx){
+      clearInterval(interval_id);
+      set_pic(init_data.resources[(indx+1) % init_data.resources.length].public_id);
+      ind = indx+1;
+
+}

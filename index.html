@@ -27,11 +27,19 @@
 
 </head>
 <body>
+<script type='text/javascript'>
+if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+if(OSName == "Linux"){
+  document.getElementById('prev_image').style.visibility = "hidden";
+  document.getElementById('next_image').style.visibility = "hidden";
+}
+</script>
+
+<button class="buttons" id="prev_image">Prev</button>
+<button class="buttons" id="next_image">Next</button>
 
 <div class="image">
 <img src="" id="monthImage" class="object-fit_contain">
-
-
 <script src='js/picture_changer.js'></script>
 
 </div>
