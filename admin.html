@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href='css/image-picker.css' rel='stylesheet'/>
-  <script src='js/jquery.min.js' type='text/javascript'></script>
+  <link href='css/admin_style.css' rel='stylesheet' />
   <script src='js/jquery.cloudinary.js' type='text/javascript'></script>
   <script src='js/jquery.min.js' type='text/javascript'></script>
   <script src='js/jquery.ui.widget.js' type='text/javascript'></script>
@@ -14,55 +13,18 @@
   <script src="http://widget.cloudinary.com/global/all.js" type="text/javascript">  </script>
   <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src='js/image-picker.min.js' type='text/javascript'></script>
-  <script src='js/masonry.pkgd.min.js' type='text/javascript'></script>
 
 </head>
 
 <body>
-
-  <script type="text/javascript">
-  $('#selectImage').empty();
-  $(document).ready(function () {
-      $("#selectImage").imagepicker({
-          hide_select: true,
-          selected: function(option){
-            values = this.val();
-
-          }
-
-      });
-
-      $(document).ready(function () {
-        $( "p" ).click(function() {
-          sessionStorage.setItem("selected",values);
-        }); });
-
-
-  });
-  </script>
-
-<p id="target">Hello</p>
-
-  <select multiple="multiple" id="selectImage" class="image-picker">
-      <option value=""></option>
-      <option data-img-src='http://res.cloudinary.com/dse2nhyx3/image/upload/sample' value='4.jpg'>4.jpg</option>
-      <option data-img-src='http://res.cloudinary.com/dse2nhyx3/image/upload/11' value='google.jpg'>google.jpg</option>
-
-  </select>
-
-<style>
-.image_picker_image {
-    max-width: 140px;
-    max-height: 100px;
-    background-color: #FF0000;
-}
-</style>
-
-
-<div>
+<div class="v-wrap">
+<div class="vertical">
+<div class="table">
+<div class = "row">
+<div class="col">
 <h3> Select a month: </h3>
-  <form id="monthForm" name="mainForm">
+
+  <div id='radio_buttons'>
   <input type="radio" name="months" value="0" checked>January</br>
   <input type="radio" name="months" value="1">February</br>
   <input type="radio" name="months" value="2">March</br>
@@ -75,48 +37,43 @@
   <input type="radio" name="months" value="9">October</br>
   <input type="radio" name="months" value="10">November</br>
   <input type="radio" name="months" value="11">December</br>
-</form>
+ </div>
+ </div>
 
-</div>
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-    $("button").click(function(){
-      $.ajax({
-        url: 'http://res.cloudinary.com/dse2nhyx3/image/list/hello.json',
-       success: function(data){
-          for (var i = 0; i < data.resources.length; i++){
-
-            }
-        }
-      })
-    });
-});
-
-</script>
-
-<button>Send an HTTP POST request to a page and get the result back</button>
-
+<div class="col">
+<div id='upload'>
+<img src='images/upload.png'></img>
 <a href="#" id="upload_widget_opener">Upload</a>
 
-
-
 <script type="text/javascript">
+var selected_month = "";
 
-  document.write(sessionStorage.getItem("selected"));
   document.getElementById("upload_widget_opener").addEventListener("click", function() {
-      var selected_month = $("input:radio[name=months]:checked").val()
+      selected_month = $("input:radio[name=months]:checked").val();
+      //document.write(typeof selected_month);
+      cloudinary.openUploadWidget({cloud_name: 'dse2nhyx3', upload_preset: 'lcum2opd', theme: 'minimal', multiple: false, tags:selected_month, max_file_size:450000},
+  function(error, result) {
+    console.log(error, result);
+    confirm(error.message);
+  });
 
 
-  cloudinary.openUploadWidget({ cloud_name: 'dse2nhyx3', upload_preset: 'lcum2opd', theme: 'minimal', multiple: false, cropping: 'server', tags='0'},
-          function(error, result) { console.log(error, result) });
 
-      });
+});
+      //cloudinary.openUploadWidget({ cloud_name: 'dse2nhyx3', upload_preset: 'lcum2opd', theme: 'minimal', multiple: false, tags='0'},
+          //function(error, result) { console.log(error, result)});
+
+
 </script>
 
+<p> Note: The max file size is 450 Kb or .45 Mb </p>
 
-
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
 
 </html>

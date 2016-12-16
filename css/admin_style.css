@@ -1,0 +1,79 @@
+#upload {
+  text-align:center;
+  font-size: 200%;
+}
+
+#radio_buttons {
+  background: white;
+  -webkit-columns: 100px 3;
+  -moz-columns: 100px 3;
+  columns: 100px 3;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
+  width: 50%;
+  background-color: inherit;
+  padding-left: 25%;
+}
+h3 {
+  text-align: center;
+}
+
+img {
+  width: 95%;
+  height: 95%;
+  margin-bottom: 5%;
+}
+a {
+  text-decoration: none;
+  color: #0052cc;
+  background: #4d94ff; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, #4d94ff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #4d94ff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #4d94ff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #4d94ff);
+  padding: 2%;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  box-shadow: 2px 2px 10px grey;
+}
+.v-wrap{
+  transform: translateY(5vh);
+}
+
+p {
+  font-size: 0.5em;
+  padding-top: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+body {
+  font-family: "Ariel", Ariel, sans-serif;
+  background-color:  #80b3ff;
+}
+
+.table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 30px 0;
+    width: 100%;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+.row {
+    display: table-row
+}
+.col {
+    display: table-cell;
+    background-color: #cce0ff;
+    border-style: solid;
+    border-width: thin;
+    border-color: #0052cc;
+    border-radius: 10px;
+    padding-bottom: 2%;
+    padding-top: 5%;
+    vertical-align: middle;
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+}
