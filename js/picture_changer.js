@@ -15,7 +15,7 @@ $.ajax({
           init_data = data;
           var d = new Date();
           set_pic(init_data.resources[0].public_id);
-          duration = ((init_data.resources.length)*30000)+1000;
+          duration = ((init_data.resources.length)*50000)+1000;
         }
       });
 
