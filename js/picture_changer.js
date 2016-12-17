@@ -29,7 +29,7 @@ $(document).ready(function(){
           ind = d.getSeconds() % _data.resources.length;
           if((d.getHours() < 12 && d.getHours() >= 5) || (d.getHours() >= 4 && d.getHours()< 23)){
           set_pic(_data.resources[ind].public_id);}
-        }else{}
+        }
         })
       });
     }, duration);
