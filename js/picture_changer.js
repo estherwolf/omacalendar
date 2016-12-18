@@ -14,7 +14,6 @@ handle_change_pic(_url);
 $('body').on('click', 'button.fc-next-button', function() {
   month_id = (month_id+1) % 12;
   _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'_month.json';
-  alert(_url);
   initialize(_url);
   handle_change_pic(_url);
 })
@@ -25,7 +24,6 @@ $('body').on('click', 'button.fc-prev-button', function() {
   month_id = (month_id-1) % 12;
   }
   _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'_month.json';
-  alert(month_id);
   initialize(_url);
   handle_change_pic(_url);
 })
