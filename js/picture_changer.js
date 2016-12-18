@@ -4,7 +4,7 @@ var duration = 0;
 d = new Date();
 month_id = d.getMonth();
 
-var _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'_month.json';
+var _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'month.json';
 var ind = 0;
 var init_data;
 
@@ -13,7 +13,7 @@ handle_change_pic(_url);
 
 $('body').on('click', 'button.fc-next-button', function() {
   month_id = (month_id+1) % 12;
-  _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'_month.json';
+  _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'month.json';
   initialize(_url);
   handle_change_pic(_url);
 })
@@ -23,7 +23,7 @@ $('body').on('click', 'button.fc-prev-button', function() {
   if (month_id != 0){
   month_id = (month_id-1) % 12;
   }
-  _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'_month.json';
+  _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'month.json';
   initialize(_url);
   handle_change_pic(_url);
 })
