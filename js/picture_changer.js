@@ -75,6 +75,7 @@ document.getElementById("next_image").onclick = function() {next_picture(ind)};
 function set_default_pic(name){
     clearInterval(interval_id);
     document.getElementById("monthImage").src = 'images/'+name+'.jpg';
+    duration = 0;
     xhr.abort();
 
 }
