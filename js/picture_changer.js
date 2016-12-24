@@ -24,6 +24,11 @@ $('body').on('click', 'button.fc-next-button', function() {
   //advance the month
   month_id = (month_id+1) % 12;
   _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'month.json';
+  clearInterval(interval_id);
+  //hack to prevent asynchronous calls from making unwanted photos appear
+  duration = 0;
+  //stop the ajax calls
+  xhr.abort();
   //grab new photos
   initialize(_url);
   handle_change_pic(_url);
@@ -38,6 +43,11 @@ $('body').on('click', 'button.fc-prev-button', function() {
     month_id = (month_id-1) % 12;
   }
   _url = 'https://res.cloudinary.com/dse2nhyx3/image/list/'+month_id+'month.json';
+  clearInterval(interval_id);
+  //hack to prevent asynchronous calls from making unwanted photos appear
+  duration = 0;
+  //stop the ajax calls
+  xhr.abort();
   //grab new photos
   initialize(_url);
   handle_change_pic(_url);
@@ -45,7 +55,7 @@ $('body').on('click', 'button.fc-prev-button', function() {
 
 function initialize(_url){
   //set the initial photos and duration
-  $.ajax({
+  xhr = $.ajax({
           url:_url,
           async:false,
           success: function(data){
