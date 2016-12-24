@@ -14,10 +14,10 @@ var init_data;
 var interval_id;
 
 //wait for DOM to be ready
-$(document).ready() function() {
+$(document).ready(function() {
   initialize(_url);
   handle_change_pic(_url);
-}
+});
 
 //Button click function for FullCalendar next button
 $('body').on('click', 'button.fc-next-button', function() {
