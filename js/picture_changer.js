@@ -64,7 +64,7 @@ function initialize(_url){
           set_pic(init_data.resources[0].public_id);
           //duration between each photo (in milliseconds)
           //caveat: this is set to work with the mod function for calculating ind in handle_change_pic
-          duration = 4000+1000;
+          duration = 5100;
         },
         error: function (request, status, error) {
           set_default_pic(month_id);
