@@ -64,7 +64,7 @@ function initialize(_url){
           set_pic(init_data.resources[0].public_id);
           //duration between each photo (in milliseconds)
           //caveat: this is set to work with the mod function for calculating ind in handle_change_pic
-          duration = 7000;
+          duration = 30000+1000;
         },
         error: function (request, status, error) {
           set_default_pic(month_id);
@@ -81,8 +81,8 @@ function handle_change_pic(_url){
                   var d = new Date();
                   //trick to change indices dynamically
                   ind = d.getSeconds() % _data.resources.length;
-                  //if((d.getHours() < 12 && d.getHours() >= 5) || (d.getHours() >= 4 && d.getHours()< 23)){
-                  //set_pic(_data.resources[ind].public_id);}
+                  if((d.getHours() < 12 && d.getHours() >= 5) || (d.getHours() >= 4 && d.getHours()< 23)){
+                  set_pic(_data.resources[ind].public_id);}
                   set_pic(_data.resources[ind].public_id);
 
                   },
